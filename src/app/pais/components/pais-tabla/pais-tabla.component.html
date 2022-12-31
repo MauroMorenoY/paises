@@ -1,0 +1,21 @@
+<table class="table table-hover ">
+    <thead>
+        <th> # </th>
+        <th> Bandera </th>
+        <th> Nombre </th>
+        <th> Poblacion </th>
+    </thead>
+    <tbody>
+        <tr *ngFor="let pais of arreglopaises" class="animate__animated animate__pulse">
+            <td>{{pais.numericCode}}
+            </td>
+            <td>
+                <img class="small-flag" [src]="pais.flag">
+            </td>
+            <td>{{pais.nativeName}}, {{pais.capital}}
+            </td>
+            <td>{{pais.population | number}}</td>
+            <td><a [routerLink]="['/pais', pais.alpha2Code]" >ir</a></td>
+        </tr> 
+    </tbody>
+</table>
